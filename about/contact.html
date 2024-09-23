@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/about/about_us_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
+    <title>Document</title>
+
+    <style>
+          body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            text-align: center;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #000;
+          }
+        
+          /* Navigation Bar */
+          .navbar {
+            background-color: #000; /* Green */
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+          }
+        
+          .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 17px;
+          }
+        
+          .navbar a:hover {
+            background-color: #fff;
+            color: black;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+          }
+        
+          .navbar a.active {
+            background-color: #333; /* Green */
+            color: white;
+            border-bottom-right-radius: 10px;
+          }
+        
+          /* Responsive Navigation */
+          .navbar .icon {
+            display: none;
+          }
+        
+          @media screen and (max-width: 770px) {
+            .navbar a:not(:first-child) {
+              display: none;
+            }
+        
+            .navbar a.icon {
+              float: right;
+              display: block;
+              color: white;
+            }
+          }
+        
+          @media screen and (max-width: 770px) {
+            .navbar.responsive {
+              position: fixed;
+            }
+        
+            .navbar.responsive a.icon {
+              position: absolute;
+              right: 0;
+              top: 0;
+            }
+        
+            .navbar.responsive a {
+              float: none;
+              display: block;
+              text-align: left;
+            }
+          }
+
+          .form-box{
+            margin-left: 10%;
+            margin-right: 10%;
+            padding-top: 20px;
+            margin-top: 20px;
+            transition: linear 0.2s;
+            padding-bottom: 20px;
+          }
+        
+          marquee{
+            color: white;
+          }
+        
+          .content {
+            padding-top: 60px; /* Space for fixed navbar */
+            text-align: center;
+          }
+        
+          /* Hero Section */
+          .hero {
+            background-color: #f2f2f2;
+            padding: 100px 0;
+          }
+        
+          .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+          }
+        
+          .hero p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            padding-left: 20px;
+            padding-right: 20px;
+          }
+        
+          ul{
+            list-style-type: none;
+            padding-left: 10px;
+            padding-right: 10px;
+          }
+
+          form { 
+            max-width: auto; 
+            margin:  auto; 
+        } 
+        
+        .radio-group { 
+            display: flex; 
+            margin-bottom: 16px; 
+        } 
+        
+        input[type="radio"] { 
+            margin-right: 8px; 
+        } 
+        
+        label { 
+            display: block; 
+            margin-bottom: 8px; 
+            font-size: 17px; 
+            color: rgb(24, 26, 24); 
+            font-weight: 600; 
+        } 
+        
+        input,textarea { 
+            width: 100%; 
+            padding: 8px; 
+            margin-bottom: 12px; 
+            box-sizing: border-box; 
+            border-radius: 10px; 
+        
+        } 
+        
+        #submitBtn { 
+            background-color: #000000; 
+            color: #fff; 
+            padding: 10px; 
+            border: none; 
+            border-radius: 25px; 
+            cursor: pointer; 
+            width: 70%; 
+            font-size: 15px; 
+            transition: .2s linear;
+            margin-left: 15%;
+            margin-right: 15%;
+        } 
+        
+        #submitBtn:hover { 
+            background-color: #555 
+        }
+
+        @media   only screen and (max-width: 2560px) and (min-width:427px){
+          .form-box { 
+            background-color: #fff; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.8); 
+            padding: 15px;
+            margin-bottom: 30px;
+            margin-left: 25%;
+            margin-right: 25%; 
+            max-width: 800px;
+            border-radius: 20px;
+            width: auto; 
+          }
+        }
+      
+        /* Navigation Bar */
+        .navbar {
+          background-color: #000; /* Green */
+          overflow: hidden;
+          position: fixed;
+          top: 0;
+          width: 100%;
+          z-index: 1;
+        }
+      
+        .navbar a {
+          float: left;
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 20px;
+          text-decoration: none;
+          font-size: 17px;
+        }
+      
+        .navbar a:hover {
+          background-color: #fff;
+          color: black;
+          border-bottom-right-radius: 10px;
+        }
+      
+        .navbar a.active {
+          background-color: #ffffff; /* Green */
+          color: rgb(0, 0, 0);
+          border-bottom-right-radius: 10px;
+        }
+      
+        /* Responsive Navigation */
+        .navbar .icon {
+          display: none;
+        }
+      
+        @media screen and (max-width: 770px) {
+          .navbar a:not(:first-child) {
+            display: none;
+          }
+      
+          .navbar a.icon {
+            float: right;
+            display: block;
+            color: #ccc;
+            background: transparent;
+          }
+        }
+      
+        @media screen and (max-width: 770px) {
+          .navbar.responsive {
+            position: fixed;
+          }
+      
+          .navbar.responsive a.icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+          }
+      
+          .navbar.responsive a {
+            float: none;
+            display: block;
+            text-align: left;
+          }
+        }
+      
+        marquee{
+          color: white;
+        }
+      
+        .content {
+          padding-top: 60px; /* Space for fixed navbar */
+          text-align: center;
+        }
+      
+        /* Hero Section */
+        .hero {
+          background-color: #f1f1f1;
+          padding: 100px 0;
+          margin-left: 15px;
+          margin-right: 15px;
+        }
+      
+        .hero h1 {
+          font-size: 3em;
+          margin-bottom: 20px;
+        }
+      
+        .hero p {
+          font-size: 1.2em;
+          margin-bottom: 40px;
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+      
+        ul{
+          list-style-type: none;
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+
+        #Contact_us{
+          background-color: #ffffff;
+        }
+      
+        .footer {
+          display: flex;
+          flex-wrap: wrap;
+          background: #333;
+          justify-content: center;
+          padding: 20px;
+      }
+      
+      .footer-col {
+          margin: 10px;
+          flex: 1 0 250px;
+      }
+      
+      .footer-col h4 {
+          font-size: 18px;
+          margin-bottom: 15px;
+          color: #f2f2f2;
+      }
+      
+      .footer-col ul {
+          list-style-type: none;
+          padding: 0;
+      }
+      
+      .footer-col ul li {
+          margin-bottom: 5px;
+      }
+      
+      .footer-col ul li a {
+          color: #ffffff;
+          text-decoration: none;
+      }
+      
+      .footer-col ul li a:hover {
+          text-decoration: underline;
+      }
+      
+      .social-links a {
+          display: inline-block;
+          margin: 0 5px;
+          text-decoration: none;
+          color: #ffffff;
+          font-size: 20px;
+          align-items: center;
+          font: 0.8cm sans-serif;
+          justify-content: space-between;
+      }
+      
+      .social-links a:hover {
+          color: #0000ff;
+      }
+      
+      @media screen and (max-width: 768px) {
+          .footer-col {
+              flex: 1 0 100%;
+          }
+
+          .container{
+            margin-left: 7%;
+          }
+
+      }
+
+      @media   screen and (min-width: 769px) {
+        .container{
+          margin-left: 40%;
+        }
+        
+      }
+
+      .container {
+        position: relative;
+        width: 300px;
+        height: 200px;
+    }
+
+    /* The sign image */
+    .sign {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: auto;
+        animation: swing 2s infinite ease-in-out;
+        transform-origin: top center;
+    }
+
+    /* Swinging animation */
+    @keyframes swing {
+        0% { transform: translateX(-50%) rotate(5deg); }
+        50% { transform: translateX(-50%) rotate(-5deg); }
+        100% { transform: translateX(-50%) rotate(5deg); }
+    }
+    </style>
+
+</head>
+<body>
+  <div class="navbar" id="myTopnav">
+    <a href="/index.html" class="active"><b>Hello Sakhi</b></a>
+    <a href="/Report/report.html">Report</a>
+    <a href="/Women_corner/corner.html">Women's Corner</a>
+    <a href="/Women_corner/podcast/podcast.html">Recharge Yourself</a>
+    <a href="/Legal/legal.html">Legal Thing</a>
+    <a href="/about/contact.html">Contact</a>
+    <a href="/about/contact.html#footer">More+</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+  <div class="content"></div>
+    <div class="hero">
+      <h1 id="about">About Us</h1>
+    <div class="hero">
+      <p><hr>
+        <h3>Our Mission</h3>
+        
+        <b>Hello Sakhi</b> is dedicated to empowering women by providing a safe, accessible, and confidential platform to report cases of sexual and domestic assault. Our mission is to:
+        <ul>
+            <li><b>Educate and empower :</b> We provide comprehensive information about women's rights, legal procedures, and available resources to help women understand their options and make informed decisions.</li><br>
+            <li><b>Create a supportive community :</b> We foster a supportive community where women can connect with others who have experienced similar trauma and find encouragement and solidarity.</li>
+        </ul>
+        <hr>
+        <h3>Our Approach</h3>
+        
+        We believe that every woman deserves to feel safe and respected. Our approach is grounded in the following principles:
+        <ul>
+            <li><b>Confidentiality :</b> We prioritize the privacy and confidentiality of every woman who comes to us for help. All information shared with us is treated with the utmost discretion.</li><br>
+            <li><b>Accessibility :</b> We aim to make our services accessible to women from all walks of life, regardless of their socioeconomic status, location, or language preferences.</li><br>
+            <li><b>Compassion and support :</b> We offer compassionate and supportive services to women throughout their journey, providing guidance, counseling, and assistance as needed.</li>
+        </ul>
+        <hr>
+        <h3>Join Us in the Fight for Justice</h3>
+        
+        By supporting Hello Sakhi, you are helping to create a safer and more just world for women. Together, we can break the cycle of violence and empower women to reclaim their lives.
+        </p><hr>
+    </div>
+  </div>
+  <div class="content" id="Contact_us">
+    <div class="hero" style="background: transparent;">
+      <h1 id="contact">Contact Us</h1>
+      <img src="/Assets/4180756_2046.svg" alt="Contact Us" height="250px" width="300px">
+      <p>
+
+<strong>Need Help? We're Here for You</strong>
+<br><br>
+If you or someone you know has experienced sexual or domestic violence, please don't hesitate to reach out to us.<br> Our team is available to provide support, information, and assistance.
+<br><br>
+<b>Here's how to contact us:</b>
+<br><br>
+Phone: +91 XXXXXXXXXX<br>
+Email: <a style="text-decoration: none;" href="mailto:amitchakdhare@gmail.com">Hello Sakhi</a>
+<br><br>
+We are committed to providing a safe and confidential space for women to seek help.<br> Please don't hesitate to contact us.
+      </p>
+    </div>
+  </div>
+
+  <div class="form-box"><p><h1>Feedback Form</h1></p> 
+		<div class="textup"> 
+			<i class="fa fa-solid fa-clock"></i> 
+			It only takes two minutes!!
+		</div> 
+    <br>
+		<form id="feedbackForm"> 
+			<label for="uname"> 
+				<i class="fa fa-solid fa-user"></i> 
+				Name 
+			</label> 
+			<input type="text" id="uname"
+				name="uname" required> 
+
+			<label for="email"> 
+				<i class="fa fa-solid fa-envelope"></i> 
+				Email Address 
+			</label> 
+			<input type="email" id="email"
+				name="email" required> 
+
+			<label for="phone"> 
+				<i class="fa-solid fa-phone"></i> 
+				Phone No 
+			</label> 
+			<input type="tel" id="phone"
+				name="phone" required> 
+
+			<label> 
+				<i class="fa-solid fa-face-smile"></i> 
+				Do you satisfy with our service? 
+			</label> 
+			<div class="radio-group"> 
+				<input type="radio" id="yes"
+					name="satisfy" value="yes" checked> 
+				<label for="yes">Yes</label> 
+
+				<input type="radio" id="no"
+					name="satisfy" value="no"> 
+				<label for="no">No</label> 
+			</div> 
+
+			<label for="msg"> 
+				<i class="fa-solid fa-comments"
+				style="margin-right: 3px;"></i> 
+				Write your Suggestions: 
+			</label> 
+			<textarea id="msg" name="msg"
+					rows="4" cols="10" required> 
+			</textarea> 
+			<button id="submitBtn" value="Submit" type="submit"> 
+				Submit 
+			</button> 
+		</form> 
+	</div>
+
+  <footer class="footer" id="footer">
+    <div class="footer-col">
+        <h4>Hello Sakhi</h4>
+        <ul>
+            <li><a href="/about/contact.html#about">About Us</a></li>
+            <li><a href="/about/contact.html#contact">Contact Us</a></li>
+            <li><a href="/Legal/legal.html#FAQ">FAQs</a></li>
+        </ul>
+    </div>
+    <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+            <li><a href="/Legal/legal.html">Reporting Guides</a></li>
+            <li><a href="/Legal/legal.html">Legal Information</a></li>
+            <li><a href="/Women_corner/corner.html#ngo_for_women">Support Services</a></li>
+            <li><a href="#">Interactive Form</a></li>
+            <li><a href="#">Survivor Stories</a></li>
+        </ul>
+    </div>
+    <div class="footer-col">
+        <h4>Women corner</h4>
+        <ul>
+            <li><a href="/Women_corner/corner.html#mental_health">Mind Matters - Take a Short Test</a></li>
+            <li><a href="/Women_corner/corner.html#scheme_for_women">Schemes For You</a></li>
+            <li><a href="/Women_corner/corner.html#ngo_for_women">NGO Working For You</a></li>
+        </ul>
+    </div> 
+    <div class="footer-col">
+        <h4>Recharge Yourself</h4>
+        <ul>
+          <li><a href="/Women_corner/podcast/podcast.html#pod">Podcast</li>
+          <li><a href="/Women_corner/podcast/podcast.html#Tedxtalks">Ted x Talks</a></li>
+          <li><a href="/Women_corner/podcast/podcast.html#inspire">Inspiring videos</a></li>
+          <li><a href="/Women_corner/podcast/podcast.html#law">Legal & Law</a></li>
+      </ul>
+    </div> 
+    <div class="footer-col" style="text-align:center">
+      <hr>
+      <h4>Hello Sakhi <br> Connect , Inspire , Empower Portal</h4>
+      <h4><a href="#" style="color: aliceblue; text-decoration: none;">Contact Us</a></h4><br>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <hr>
+    </div>
+</footer>
+</body>
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "navbar") {
+        x.className += " responsive";
+      } else {
+        x.className = "navbar";
+      }
+    }
+
+    document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the default form submission action
+      
+      // You can add form data handling here if needed
+      // For now, it just alerts the user
+      alert("Thank you for your feedback!");
+      
+      // Reset the form
+      this.reset();
+  });
+    </script>
+</html>

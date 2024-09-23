@@ -1,0 +1,111 @@
+ body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    color: #000;
+  }
+
+  /* Navigation Bar */
+  .navbar {
+    background-color: #000; /* Green */
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  .navbar a:hover {
+    background-color: #fff;
+    color: black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .navbar a.active {
+    background-color: #333; /* Green */
+    color: white;
+    border-bottom-right-radius: 10px;
+  }
+
+  /* Responsive Navigation */
+  .navbar .icon {
+    display: none;
+  }
+
+  @media screen and (max-width: 770px) {
+    .navbar a:not(:first-child) {
+      display: none;
+    }
+
+    .navbar a.icon {
+      float: right;
+      display: block;
+      color: white;
+      background: transparent;
+    }
+  }
+
+  @media screen and (max-width: 770px) {
+    .navbar.responsive {
+      position: fixed;
+    }
+
+    .navbar.responsive a.icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .navbar.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  }
+
+  marquee{
+    color: white;
+  }
+
+  .content {
+    padding-top: 60px; /* Space for fixed navbar */
+    text-align: center;
+  }
+
+  /* Hero Section */
+  .hero {
+    background-color: #f2f2f2;
+    padding: 100px 0;
+  }
+
+  .hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+
+  .hero p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  ul{
+    list-style-type: none;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  
